@@ -140,49 +140,7 @@ def detect_outliers_zscore(df, column, threshold=3):
 subway_z_outliers = detect_outliers_zscore(df, 'Subways: Total Estimated Ridership')
 
 
-# 6. Check skewness of the data (without scipy)
-def calculate_skewness(series):
-    n = len(series)
-    mean = np.mean(series)
-    std = np.std(series)
-    # Fisher-Pearson coefficient of skewness
-    skewness = (np.sum((series - mean) ** 3) / n) / (std ** 3)
-    return skewness
-
-
-print("Skewness Analysis:")
-skewness_results = {}
-for col in numeric_cols:
-    skew_value = calculate_skewness(df[col])
-    skewness_results[col] = skew_value
-
-    # Interpret skewness
-    if abs(skew_value) < 0.5:
-        interpretation = "approximately symmetric"
-    elif abs(skew_value) < 1:
-        interpretation = "moderately skewed"
-    else:
-        interpretation = "highly skewed"
-
-    if skew_value > 0:
-        direction = "positively"
-    else:
-        direction = "negatively"
-
-    print(f"{col}: {skew_value:.4f} - {direction} {interpretation}")
-
-# Create a bar plot of skewness values
-plt.figure(figsize=(12, 8))
-plt.bar(list(skewness_results.keys()), list(skewness_results.values()))
-plt.xticks(rotation=90)
-plt.ylabel('Skewness Value')
-plt.title('Skewness of Each Numeric Variable')
-plt.tight_layout()
-plt.savefig('skewness_barplot.png')
-plt.close()
-
-
-# 7. Perform t-test between two time periods (without scipy)
+# 7. Perform t-test between two time periods
 def perform_ttest(sample1, sample2):
     # Calculate means
     mean1 = np.mean(sample1)
