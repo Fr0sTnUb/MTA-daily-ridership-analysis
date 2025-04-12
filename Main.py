@@ -33,7 +33,6 @@ print("\nStatistical summary of the dataset:")
 print(df.describe())
 
 # 3. Data Visualization
-# Convert Date column to datetime format for better analysis
 df['Date'] = pd.to_datetime(df['Date'])
 df['Month'] = df['Date'].dt.month
 df['Year'] = df['Date'].dt.year
@@ -117,7 +116,7 @@ plt.close()
 subway_outliers = detect_outliers_iqr(df, 'Subways: Total Estimated Ridership')
 
 
-# 5. Z-test for outlier detection (without scipy)
+# 5. Z-test for outlier detection
 def detect_outliers_zscore(df, column, threshold=3):
     mean = df[column].mean()
     std = df[column].std()
