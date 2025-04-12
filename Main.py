@@ -152,8 +152,6 @@ def perform_ttest(sample1, sample2):
 
     # Calculate t-statistic
     t_stat = (mean1 - mean2) / np.sqrt((var1 / n1) + (var2 / n2))
-
-    # Calculate degrees of freedom (Welch-Satterthwaite equation)
     df_numerator = ((var1 / n1) + (var2 / n2)) ** 2
     df_denominator = ((var1 / n1) ** 2 / (n1 - 1)) + ((var2 / n2) ** 2 / (n2 - 1))
     df = df_numerator / df_denominator
