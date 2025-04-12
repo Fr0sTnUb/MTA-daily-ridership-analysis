@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data from CSV file
-# Replace 'your_file_path.csv' with your actual file path
 df = pd.read_csv('MTA_Daily_Ridership.csv')
 
 # 1. Checking and handling null values
@@ -14,13 +13,12 @@ null_counts = df.isnull().sum()
 print(null_counts)
 
 # Handle null values
-# For numerical columns - replace with mean
 numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
 for col in numeric_cols:
     if df[col].isnull().sum() > 0:
         df[col].fillna(df[col].mean(), inplace=True)
 
-# For categorical columns (in this case just 'Date') - replace with mode
+#categorical columns
 categorical_cols = df.select_dtypes(include=['object']).columns
 for col in categorical_cols:
     if df[col].isnull().sum() > 0:
