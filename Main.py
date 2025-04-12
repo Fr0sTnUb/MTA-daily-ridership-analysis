@@ -150,7 +150,7 @@ def perform_ttest(sample1, sample2):
     n1 = len(sample1)
     n2 = len(sample2)
 
-    # Calculate t-statistic (for unequal variances - Welch's t-test)
+    # Calculate t-statistic
     t_stat = (mean1 - mean2) / np.sqrt((var1 / n1) + (var2 / n2))
 
     # Calculate degrees of freedom (Welch-Satterthwaite equation)
