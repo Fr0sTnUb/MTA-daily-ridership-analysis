@@ -143,7 +143,7 @@ def perform_ttest(sample1, sample2):
     mean2 = np.mean(sample2)
 
     # Calculate variances
-    var1 = np.var(sample1, ddof=1)  # Using ddof=1 for variance
+    var1 = np.var(sample1, ddof=1)
     var2 = np.var(sample2, ddof=1)
 
     # Calculate sample sizes
