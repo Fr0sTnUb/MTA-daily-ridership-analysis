@@ -38,10 +38,6 @@ The code requires the following Python libraries:
    ```python
    df = pd.read_csv('your_file_path.csv')
    ```
-4. Run the analysis script:
-   ```
-   python mta_analysis.py
-   ```
 
 ## Dataset Description
 
@@ -76,7 +72,6 @@ The dataset contains the following columns:
 ### Statistical Testing
 - IQR method for outlier detection
 - Z-score based outlier identification
-- Skewness calculation and interpretation
 - Welch's t-test for comparing time periods (pre-2022 vs. 2022+)
 
 ### Visualization
@@ -94,13 +89,9 @@ The analysis generates several key visualizations:
 - `yearly_ridership_barplot.png`: Displays yearly average ridership by transit mode
 - `recovery_histograms.png`: Shows distribution of pandemic recovery percentages
 - `ridership_boxplot.png`: Illustrates outliers in ridership data
-- `skewness_barplot.png`: Visualizes data skewness across variables
 - `subway_bus_scatter.png`: Explores the relationship between subway and bus ridership
 - `monthly_trend.png`: Tracks monthly ridership trends over multiple years
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
