@@ -47,7 +47,6 @@ plt.savefig('correlation_heatmap.png')
 plt.close()
 
 # Create bar plots for average ridership by year
-# Define columns containing ridership data
 ridership_cols = ['Subways: Total Estimated Ridership',
                   'Buses: Total Estimated Ridership',
                   'LIRR: Total Estimated Ridership',
