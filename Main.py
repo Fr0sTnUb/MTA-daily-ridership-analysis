@@ -139,7 +139,6 @@ subway_z_outliers = detect_outliers_zscore(df, 'Subways: Total Estimated Ridersh
 
 # 7. Perform t-test between two time periods
 def perform_ttest(sample1, sample2):
-    # Calculate means
     mean1 = np.mean(sample1)
     mean2 = np.mean(sample2)
 
